@@ -11,17 +11,17 @@ if(isset($_POST["info"])){
 
     $solution = "Uw BMI is " . $som;
     if($som <= 18.5){
-        $comment = " en u heeft een ondergewicht";
+        $comment = "u heeft een ondergewicht";
     } else if($som <= 25){
-        $comment = " en u heeft een normaal gewicht";
+        $comment = "u heeft een normaal gewicht";
     }else if($som <= 27){
-        $comment = " en u heeft een Licht overgewicht";
+        $comment = "u heeft een Licht overgewicht";
     }else if($som <= 30){
-        $comment = " en u heeft een Matig overgewicht";
+        $comment = "u heeft een Matig overgewicht";
     }else if($som <= 40){
-        $comment = " en u heeft een Ernstig overgewicht (obesitas)";
+        $comment = "u heeft een Ernstig overgewicht (obesitas)";
     }else{
-        $comment = " en u heeft een Zeer ernstig overgewicht (morbide obesitas)";
+        $comment = "u heeft een Zeer ernstig overgewicht (morbide obesitas)";
     }
     $lengte = $lengte * 100;
 };
@@ -38,7 +38,7 @@ if(isset($_POST["info"])){
     <style>
         body{
             text-transform: capitalize;
-            background-color: #c9d7d8;
+            background-color: #f5ffff;
         }
         h1{
             padding: 40px 0;
@@ -51,7 +51,7 @@ if(isset($_POST["info"])){
         <div class="row">
             <div class="col-ms-6 col-md-6">
                 <h1>BMI berekenen</h1>
-                <h5>Voer uw gewicht en lengte in.</h5>
+                <h5>Voer uw gewichtlengte in.</h5>
                 <form name="form_bmi" method="post">
                     <div class="mb-3">
             
@@ -68,7 +68,8 @@ if(isset($_POST["info"])){
                             <input type="submit" name="info" value="Bevestig" class="btn btn-dark btn-lg">
                     </div>
                 </form>
-                <h5><?php echo $solution . $comment?> </h5>
+                <h3><?php echo $solution?> </h3>
+                <p><?php echo $comment?></p>
             </div>
             <div class="mb-3 col-ms-6 col-md-6">
                 <img src="bmi.png" width="100%">
